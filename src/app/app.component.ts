@@ -4,10 +4,12 @@ import { Component, ViewChild } from '@angular/core';
 import { MatTable } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { TableAddComponent } from './table-add/table-add.component';
+import { MessageService } from 'primeng/api';
 
 export interface UsersData {
   name: string;
   id: number;
+  
 }
 
 const ELEMENT_DATA: UsersData[] = [

@@ -16,7 +16,7 @@ export class TableAddComponent  {
 
   action:string;
   local_data:any;
-
+ 
   constructor(
     public dialogRef: MatDialogRef<TableAddComponent>,
     //@Optional() is used to prevent error if no data is passed

@@ -18,4 +18,45 @@
     overflow: auto;
     max-height: 750px;
   }
+  table, th, td {
+    border: 1px solid black;
+  }
   
+th
+{
+  font-weight: bold;
+  color : blueviolet;
+  
+
+}
+.mat-button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+td { 
+  display: table-cell;
+  vertical-align: inherit;
+  text-align: inherit; 
+  padding: 1px;
+}
+a{
+
+  color : red;
+}
+  .mat-table {
+    margin-block-start: auto;
+    backface-visibility: visible;
+    border-spacing: 0.5rem;
+    width: auto;
+    background: #fff;
+    white-space: break-spaces;
+    border-block-start: none;
+    background-color: aliceblue;
+    border-collapse: collapse;
+}
