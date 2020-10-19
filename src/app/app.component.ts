@@ -50,9 +50,8 @@ export class AppComponent {
       if(result.event == 'Add'){
         this.addRowData(result.data);
         
-      }else if(result.event == 'Update'){
-        this.updateRowData(result.data);
-      }else if(result.event == 'Delete'){
+      }
+      else if(result.event == 'Delete'){
         this.deleteRowData(result.data);
       }
     });
