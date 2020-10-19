@@ -9,16 +9,18 @@ import {Table , TableService } from 'primeng/table';
 
 export interface UsersData {
   name: string;
+  job: string;
   id: number;
 
 }
 
 const ELEMENT_DATA: UsersData[] = [
-  {id: 1560608769632, name: 'Artificial Intelligence'},
-  {id: 1560608796014, name: 'Machine Learning'},
-  {id: 1560608787815, name: 'Robotic Process Automation'},
-  {id: 1560608805101, name: 'Blockchain'}
+  {id: 1560608769632, name: 'Artificial Intelligence', job:' teacher'},
+  {id: 1560608796014, name: 'Machine Learning', job:'teacher'},
+  {id: 1560608787815, name: 'Robotic Process Automation' , job: 'teacher'},
+  {id: 1560608805101, name: 'Blockchain' , job: 'teacher'}
 ];
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -30,7 +32,7 @@ const ELEMENT_DATA: UsersData[] = [
   }],
 })
 export class AppComponent {
-  displayedColumns: string[] = ['id', 'name', 'action','edit'];
+  displayedColumns: string[] = ['id', 'name', 'job','action'];
   dataSource = ELEMENT_DATA;
 
   @ViewChild(MatTable,{static:true}) table: MatTable<any>;
@@ -60,7 +62,8 @@ export class AppComponent {
     var d = new Date();
     this.dataSource.push({
       id:d.getTime(),
-      name:row_obj.name
+      name:row_obj.name,
+      job:row_obj.job
     });
     this.table.renderRows();
     

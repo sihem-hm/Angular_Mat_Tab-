@@ -38,7 +38,34 @@
 	
 	
 	
+	  </ng-container>
+	  
+	  <ng-container matColumnDef="job" pEditableColumn >
+		
+        <th mat-header-cell *matHeaderCellDef> job </th> <th style="width:8rem"></th>
+		
+		<td  pEditableColumn  *matCellDef="let element" style="text-align:center"  > 
+			<p-cellEditor>
+		
+			<ng-template pTemplate="input">
+				<input pInputText type="text" [(ngModel)]="element.job">
+			</ng-template>
+			<ng-template pTemplate="output">
+				{{element.job}}
+			</ng-template>
+		
+		
+		</p-cellEditor>
+		
+		</td>
+	
+	
+	
       </ng-container>
+
+
+
+
   
      
       <ng-container matColumnDef="action">
