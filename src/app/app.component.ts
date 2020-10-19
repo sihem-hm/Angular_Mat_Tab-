@@ -5,11 +5,12 @@ import { MatTable } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { TableAddComponent } from './table-add/table-add.component';
 import { MessageService } from 'primeng/api';
+import {Table , TableService } from 'primeng/table';
 
 export interface UsersData {
   name: string;
   id: number;
-  
+
 }
 
 const ELEMENT_DATA: UsersData[] = [
@@ -21,10 +22,15 @@ const ELEMENT_DATA: UsersData[] = [
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [ TableService, {
+    provide: Table
+    
+
+  }],
 })
 export class AppComponent {
-  displayedColumns: string[] = ['id', 'name', 'action'];
+  displayedColumns: string[] = ['id', 'name', 'action','edit'];
   dataSource = ELEMENT_DATA;
 
   @ViewChild(MatTable,{static:true}) table: MatTable<any>;

@@ -12,6 +12,20 @@ import { MatDialogModule } from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
 import { TableAddComponent } from './table-add/table-add.component';
 import { FormsModule } from '@angular/forms';
+import {TabViewModule} from 'primeng/tabview';
+import {TableModule} from 'primeng/table';
+import {ToastModule} from 'primeng/toast';
+import {CalendarModule} from 'primeng/calendar';
+import {SliderModule} from 'primeng/slider';
+import {MultiSelectModule} from 'primeng/multiselect';
+import {ContextMenuModule} from 'primeng/contextmenu';
+import {DialogModule} from 'primeng/dialog';
+import {ButtonModule} from 'primeng/button';
+import {DropdownModule} from 'primeng/dropdown';
+import {ProgressBarModule} from 'primeng/progressbar';
+import {InputTextModule} from 'primeng/inputtext';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -20,6 +34,7 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
+    
     MatSliderModule,
     MatTableModule,
     BrowserAnimationsModule,
@@ -28,7 +43,16 @@ import { FormsModule } from '@angular/forms';
     MatIconModule,
     MatSelectModule,
     MatDialogModule,
-    FormsModule
+    FormsModule,
+    TabViewModule,
+    TableModule,
+    ToastModule,
+    InputTextModule,
+    ProgressBarModule,
+    FormsModule,
+    CalendarModule,
+   HttpClientModule 
+
 
 
 
