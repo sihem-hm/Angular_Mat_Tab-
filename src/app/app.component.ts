@@ -6,6 +6,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { TableAddComponent } from './table-add/table-add.component';
 import { MessageService } from 'primeng/api';
 import {Table , TableService } from 'primeng/table';
+import {FormControl} from '@angular/forms';
 
 export interface UsersData {
   name: string;
@@ -13,6 +14,19 @@ export interface UsersData {
   id: number;
 
 }
+/* export interface Food {
+  value: string;
+  viewValue: string;
+}
+
+  const foods: Food[] = [
+    {value: 'steak-0', viewValue: 'Steak'},
+    {value: 'pizza-1', viewValue: 'Pizza'},
+    {value: 'tacos-2', viewValue: 'Tacos'}
+  ]; */
+
+
+
 
 const ELEMENT_DATA: UsersData[] = [
   {id: 1560608769632, name: 'Artificial Intelligence', job:' teacher'},
@@ -32,9 +46,11 @@ const ELEMENT_DATA: UsersData[] = [
   }],
 })
 export class AppComponent {
-  displayedColumns: string[] = ['id', 'name', 'job','action'];
+  displayedColumns: string[] = ['id', 'name', 'job','action','toppingList']
   dataSource = ELEMENT_DATA;
+  toppings = new FormControl();
 
+  toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
   @ViewChild(MatTable,{static:true}) table: MatTable<any>;
 
   constructor(public dialog: MatDialog) {}

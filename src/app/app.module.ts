@@ -25,6 +25,8 @@ import {DropdownModule} from 'primeng/dropdown';
 import {ProgressBarModule} from 'primeng/progressbar';
 import {InputTextModule} from 'primeng/inputtext';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -51,7 +53,8 @@ import { HttpClientModule } from '@angular/common/http';
     ProgressBarModule,
     FormsModule,
     CalendarModule,
-   HttpClientModule 
+   HttpClientModule ,
+   ReactiveFormsModule 
 
 
 

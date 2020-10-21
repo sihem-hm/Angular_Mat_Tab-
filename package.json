@@ -22,6 +22,7 @@
     "@angular/platform-browser-dynamic": "~10.1.6",
     "@angular/router": "~10.1.6",
     "@fortawesome/angular-fontawesome": "^0.5.0",
+    "@ng-select/ng-select": "^5.0.8",
     "primeicons": "^4.0.0",
     "primeng": "^10.0.3",
     "rxjs": "~6.6.0",

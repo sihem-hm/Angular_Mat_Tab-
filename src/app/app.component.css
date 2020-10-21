@@ -29,6 +29,12 @@ th
   
 
 }
+.aa{width: 19%;}
+.example-additional-selection {
+  opacity: 0.25;
+  font-size: 0.25em;
+  width: 10px ;
+}
 .mat-button {
   background-color: #4CAF50; /* Green */
   border: none;
