@@ -77,7 +77,31 @@
 		</ng-container>
 
 
+	
 
+	<ng-container matColumnDef="timeOfDay" pEditableColumn>
+
+		<th mat-header-cell *matHeaderCellDef> timeOfDay </th>
+		<th style="width:8rem"></th>
+
+		<td pEditableColumn *matCellDef="let element" style="text-align:center">
+			<p-cellEditor>
+
+				<ng-template pTemplate="input">
+					<input pInputText type="text" [(ngModel)]="element.timeOfDay">
+				</ng-template>
+				<ng-template pTemplate="output">
+					{{element.timeOfDay}}
+				</ng-template>
+
+
+			</p-cellEditor>
+
+		</td>
+
+
+
+	</ng-container>
 
 
 
@@ -100,9 +124,9 @@
 			<td  mat-cell *matCellDef="let element"  style="text-align:center"  > 
 				
 				<mat-form-field appearance="fill" class ="aa">
-					
+					<mat-label>Toppings</mat-label>
 					<mat-select >
-						<mat-label>Toppings</mat-label>
+						
 					  <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
 					</mat-select>
 				  </mat-form-field>

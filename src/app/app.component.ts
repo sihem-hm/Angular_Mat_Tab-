@@ -12,6 +12,7 @@ export interface UsersData {
   name: string;
   job: string;
   id: number;
+  timeOfDay : Date;
 
 }
 /* export interface Food {
@@ -29,10 +30,10 @@ export interface UsersData {
 
 
 const ELEMENT_DATA: UsersData[] = [
-  {id: 1560608769632, name: 'Artificial Intelligence', job:' teacher'},
-  {id: 1560608796014, name: 'Machine Learning', job:'teacher'},
-  {id: 1560608787815, name: 'Robotic Process Automation' , job: 'teacher'},
-  {id: 1560608805101, name: 'Blockchain' , job: 'teacher'}
+  {id: 1560608769632, name: 'Artificial Intelligence', job:' teacher',timeOfDay : new Date('2020-04-24')},
+  {id: 1560608796014, name: 'Machine Learning', job:'teacher',timeOfDay : new Date('2020-04-24')},
+  {id: 1560608787815, name: 'Robotic Process Automation' , job: 'teacher',timeOfDay : new Date('2020-04-24')},
+  {id: 1560608805101, name: 'Blockchain' , job: 'teacher',timeOfDay : new Date('2020-04-24')}
 ];
 
 @Component({
@@ -46,7 +47,7 @@ const ELEMENT_DATA: UsersData[] = [
   }],
 })
 export class AppComponent {
-  displayedColumns: string[] = ['id', 'name', 'job','action','toppingList']
+  displayedColumns: string[] = ['id', 'name', 'job', 'action', 'timeOfDay', 'toppingList']
   dataSource = ELEMENT_DATA;
   toppings = new FormControl();
 
@@ -78,7 +79,8 @@ export class AppComponent {
     this.dataSource.push({
       id:d.getTime(),
       name:row_obj.name,
-      job:row_obj.job
+      job:row_obj.job,
+      timeOfDay : row_obj.timeOfDay,
     });
     this.table.renderRows();
     
