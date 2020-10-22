@@ -1,22 +1,16 @@
 <!-- app.component.html -->
 
- <mat-form-field appearance="fill" class ="aa">
-	<mat-label>Toppings</mat-label>
-	<mat-select >
-	 
-	  <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
-	</mat-select>
-  </mat-form-field> 
 
 
 
-<br>
+
+
 
 <div class="container text-center">
 
 	<button mat-button (click)="openDialog('Add',{})" mat-flat-button color="green"
 		class="p-button-rounded p-button-text" class="btn btn-secondary">Add Row</button>
-
+		<br>
 	<table mat-table [dataSource]="dataSource" #mytable class="my-table mat-elevation-z8">
 
 
