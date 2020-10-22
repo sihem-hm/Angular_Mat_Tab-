@@ -108,27 +108,52 @@
 			</td>
 		</ng-container>
 
-
-
-
-		<ng-container matColumnDef="toppingList" >
-		
-			<th mat-header-cell *matHeaderCellDef> toppingList </th> <th style="width:8rem"></th>
-			
-			<td  mat-cell *matCellDef="let element"  style="text-align:center"  > 
-				
-				<mat-form-field appearance="fill" class ="aa">
-					<mat-label>Toppings</mat-label>
-					<mat-select >
+	<!-- <input mat-input  pTemplate="input"/> -->
 						
-					  <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
-					</mat-select>
-				  </mat-form-field>
+							
+					<!-- <mat-select >
+						<p-cellEditor>
+					  <mat-option *ngFor="let topping of toppingList" [value]="topping">
+						  {{topping}}</mat-option>
+					
+						</p-cellEditor>
+					</mat-select> -->
+
+
+		<ng-container matColumnDef="toppingList" pEditableColumn>
+		
+			<th mat-header-cell *matHeaderCellDef> toppingList </th> 
 			
+			<td pEditableColumn   mat-cell *matCellDef="let element"  style="text-align:center"  > 
+				<mat-label>Toppings</mat-label>
+					
+			<p-cellEditor>
+              
+					
+                        <ng-template pTemplate="input">
+                            <p-dropdown [options]="toppingList" [(ngModel)]="element.toppingList" [style]="{'width':'100%'}"></p-dropdown>
+                        </ng-template>
+                        <ng-template pTemplate="output">
+                            {{toppingList}}
+                        </ng-template>
+                   
+		
+					</p-cellEditor>
+
 			
-			</td>
-				
-		  </ng-container>  
+				</td>
+			</ng-container>
+
+		  <!-- <td pEditableColumn>
+			<p-cellEditor>
+				<ng-template pTemplate="input">
+					<p-dropdown [options]="statuses" [(ngModel)]="toppingList.inventoryStatus" [style]="{'width':'100%'}"></p-dropdown>
+				</ng-template>
+				<ng-template pTemplate="output">
+					{{product.inventoryStatus}}
+				</ng-template>
+			</p-cellEditor>
+		</td> -->
 
 		<ng-container matColumnDef="edit">
 

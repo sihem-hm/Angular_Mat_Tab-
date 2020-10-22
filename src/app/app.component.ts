@@ -50,7 +50,8 @@ export class AppComponent {
   displayedColumns: string[] = ['id', 'name', 'job', 'action', 'timeOfDay', 'toppingList']
   dataSource = ELEMENT_DATA;
   toppings = new FormControl();
-
+  
+  
   toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
   @ViewChild(MatTable,{static:true}) table: MatTable<any>;
 
