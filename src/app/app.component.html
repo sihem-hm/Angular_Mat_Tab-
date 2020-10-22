@@ -22,19 +22,19 @@
 		</ng-container>
 
 
-		<ng-container matColumnDef="name" pEditableColumn>
+		<ng-container matColumnDef="name" pEditableColumn >
 
 			<th mat-header-cell *matHeaderCellDef> Name </th>
 			<th style="width:8rem"></th>
 
-			<td pEditableColumn *matCellDef="let element" style="text-align:center">
+			<td pEditableColumn *matCellDef="let element" style="text-align:center" >
 				<p-cellEditor>
 
-					<ng-template pTemplate="input">
-						<input pInputText type="text" [(ngModel)]="element.name">
+					<ng-template pTemplate="input" let-product let-editing="editing" let-ri="rowIndex">
+						<p-dropdown [options]="statuses" [(ngModel)]="product.inventoryStatus" [style]="{'width':'100%'}"></p-dropdown>
 					</ng-template>
-					<ng-template pTemplate="output">
-						{{element.name}}
+					<ng-template pTemplate="output" let-product let-editing="editing" let-ri="rowIndex">
+						{{product.inventoryStatus}}
 					</ng-template>
 
 
@@ -120,25 +120,21 @@
 					</mat-select> -->
 
 
-		<ng-container matColumnDef="toppingList" pEditableColumn>
+		<ng-container matColumnDef="status" pEditableColumn>
 		
-			<th mat-header-cell *matHeaderCellDef> toppingList </th> 
+			<th mat-header-cell *matHeaderCellDef> status </th> 
 			
 			<td pEditableColumn   mat-cell *matCellDef="let element"  style="text-align:center"  > 
 				<mat-label>Toppings</mat-label>
 					
-			<p-cellEditor>
-              
-					
-                        <ng-template pTemplate="input">
-                            <p-dropdown [options]="toppingList" [(ngModel)]="element.toppingList" [style]="{'width':'100%'}"></p-dropdown>
-                        </ng-template>
-                        <ng-template pTemplate="output">
-                            {{toppingList}}
-                        </ng-template>
-                   
-		
-					</p-cellEditor>
+				<p-cellEditor>
+					<ng-template pTemplate="input">
+						<p-dropdown [options]="statuses" [(ngModel)]="element.status" [style]="{'width':'100%'}"></p-dropdown>
+					</ng-template>
+					<ng-template pTemplate="output">
+						{{element.status}}
+					</ng-template>
+				</p-cellEditor>
 
 			
 				</td>

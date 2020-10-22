@@ -1,12 +1,15 @@
 //app.component.ts
 import { Component, ViewChild } from '@angular/core';
-
+import { SelectItem } from 'primeng/api';
 import { MatTable } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { TableAddComponent } from './table-add/table-add.component';
 import { MessageService } from 'primeng/api';
 import {Table , TableService } from 'primeng/table';
 import {FormControl} from '@angular/forms';
+import { Product } from './product';
+import { ProductService } from './productservice';
+
 
 export interface UsersData {
   name: string;
@@ -47,15 +50,27 @@ const ELEMENT_DATA: UsersData[] = [
   }],
 })
 export class AppComponent {
-  displayedColumns: string[] = ['id', 'name', 'job', 'action', 'timeOfDay', 'toppingList']
+  displayedColumns: string[] = ['id', 'name', 'job', 'action', 'timeOfDay', 'status']
   dataSource = ELEMENT_DATA;
   toppings = new FormControl();
-  
+  products1: Product[];
+
+    products2: Product[];
+
+    statuses: SelectItem[];
+
+    clonedProducts: { [s: string]: Product; } = {};
   
   toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
   @ViewChild(MatTable,{static:true}) table: MatTable<any>;
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog,private productService: ProductService ,private messageService: MessageService) {}
+  ngOnInit() {
+    this.productService.getProductsSmall().then(data => this.products1 = data);
+    this.productService.getProductsSmall().then(data => this.products2 = data);
+
+    this.statuses = [{label: 'In Stock', value: 'INSTOCK'},{label: 'Low Stock', value: 'LOWSTOCK'},{label: 'Out of Stock', value: 'OUTOFSTOCK'}]
+}
 
   openDialog(action,obj) {
     obj.action = action;
@@ -86,6 +101,20 @@ export class AppComponent {
     this.table.renderRows();
     
   }
+
+  onRowEditInit(product: Product) {
+    this.clonedProducts[product.id] = {...product};
+}
+
+onRowEditSave(product: Product) {
+    if (product.price > 0) {
+        delete this.clonedProducts[product.id];
+        this.messageService.add({severity:'success', summary: 'Success', detail:'Product is updated'});
+    }  
+    else {
+        this.messageService.add({severity:'error', summary: 'Error', detail:'Invalid Price'});
+    }
+}
   updateRowData(row_obj){
     this.dataSource = this.dataSource.filter((value,key)=>{
       if(value.id == row_obj.id){
@@ -99,4 +128,8 @@ export class AppComponent {
       return value.id != row_obj.id;
     });
   }
+  onRowEditCancel(product: Product, index: number) {
+    this.products2[index] = this.clonedProducts[product.id];
+    delete this.products2[product.id];
+}
 }

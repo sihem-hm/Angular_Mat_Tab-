@@ -12,6 +12,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
 import { TableAddComponent } from './table-add/table-add.component';
 import { FormsModule } from '@angular/forms';
+
 import {TabViewModule} from 'primeng/tabview';
 import {TableModule} from 'primeng/table';
 import {ToastModule} from 'primeng/toast';
@@ -47,6 +48,7 @@ import {DropdownModule} from 'primeng/dropdown';
     MatSelectModule,
     MatDialogModule,
     FormsModule,
+  
     TabViewModule,
     TableModule,
     ToastModule,
@@ -55,7 +57,8 @@ import {DropdownModule} from 'primeng/dropdown';
     FormsModule,
     CalendarModule,
    HttpClientModule ,
-   ReactiveFormsModule 
+   ReactiveFormsModule ,
+   HttpClientModule
 
 
 
