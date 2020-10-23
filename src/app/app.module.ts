@@ -12,7 +12,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
 import { TableAddComponent } from './table-add/table-add.component';
 import { FormsModule } from '@angular/forms';
-
+import { MessageService } from 'primeng/api';
 import {TabViewModule} from 'primeng/tabview';
 import {TableModule} from 'primeng/table';
 import {ToastModule} from 'primeng/toast';
@@ -22,7 +22,7 @@ import {MultiSelectModule} from 'primeng/multiselect';
 import {ContextMenuModule} from 'primeng/contextmenu';
 import {DialogModule} from 'primeng/dialog';
 import {ButtonModule} from 'primeng/button';
-
+import { ProductService } from './productservice';
 import {ProgressBarModule} from 'primeng/progressbar';
 import {InputTextModule} from 'primeng/inputtext';
 import { HttpClientModule } from '@angular/common/http';
@@ -33,8 +33,9 @@ import {DropdownModule} from 'primeng/dropdown';
 @NgModule({
   declarations: [
     AppComponent,
-    TableAddComponent,
-    BrowserModule
+    TableAddComponent
+  
+   
   ],
   imports: [
     BrowserModule,
@@ -49,7 +50,12 @@ import {DropdownModule} from 'primeng/dropdown';
     MatSelectModule,
     MatDialogModule,
     FormsModule,
-  
+    TableModule,
+    CalendarModule,
+		SliderModule,
+		DialogModule,
+		MultiSelectModule,
+		ContextMenuModule,
     TabViewModule,
     TableModule,
     ToastModule,
@@ -69,7 +75,7 @@ import {DropdownModule} from 'primeng/dropdown';
 
 
   ],
-  providers: [],
+  providers: [ ProductService,MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

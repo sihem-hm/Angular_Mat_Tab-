@@ -4,7 +4,7 @@ import { SelectItem } from 'primeng/api';
 import { MatTable } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { TableAddComponent } from './table-add/table-add.component';
-import { MessageService } from 'primeng/api';
+ import { MessageService } from 'primeng/api';
 import {Table , TableService } from 'primeng/table';
 import {FormControl} from '@angular/forms';
 import { Product } from './product';
@@ -67,7 +67,10 @@ export class AppComponent {
   toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
   @ViewChild(MatTable,{static:true}) table: MatTable<any>;
 
-  constructor(public dialog: MatDialog,private productService: ProductService ,private messageService: MessageService) {}
+  constructor(public dialog: MatDialog,private productService: ProductService ,
+    
+    
+    private messageService: MessageService) {}
   ngOnInit() {
     this.productService.getProductsSmall().then(data => this.products1 = data);
     this.productService.getProductsSmall().then(data => this.products2 = data);
