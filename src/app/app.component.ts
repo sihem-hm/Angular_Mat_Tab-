@@ -10,6 +10,9 @@ import {FormControl} from '@angular/forms';
 import { Product } from './product';
 import { ProductService } from './productservice';
 
+import { Injectable } from '@angular/core';
+
+
 
 export interface UsersData {
   name: string;

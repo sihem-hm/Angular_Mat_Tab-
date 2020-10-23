@@ -33,7 +33,8 @@ import {DropdownModule} from 'primeng/dropdown';
 @NgModule({
   declarations: [
     AppComponent,
-    TableAddComponent
+    TableAddComponent,
+    BrowserModule
   ],
   imports: [
     BrowserModule,
