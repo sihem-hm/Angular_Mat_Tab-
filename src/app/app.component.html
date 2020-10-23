@@ -31,10 +31,10 @@
 				<p-cellEditor>
 
 					<ng-template pTemplate="input" let-product let-editing="editing" let-ri="rowIndex">
-						<p-dropdown [options]="statuses" [(ngModel)]="product.inventoryStatus" [style]="{'width':'100%'}"></p-dropdown>
+						<p-dropdown [options]="statuses" [(ngModel)]="element.product" [style]="{'width':'100%'}"></p-dropdown>
 					</ng-template>
 					<ng-template pTemplate="output" let-product let-editing="editing" let-ri="rowIndex">
-						{{product.inventoryStatus}}
+						{{element.product}}
 					</ng-template>
 
 
@@ -125,8 +125,7 @@
 			<th mat-header-cell *matHeaderCellDef> status </th> 
 			
 			<td pEditableColumn   mat-cell *matCellDef="let element"  style="text-align:center"  > 
-				<mat-label>Toppings</mat-label>
-					
+			
 				<p-cellEditor>
 					<ng-template pTemplate="input">
 						<p-dropdown [options]="statuses" [(ngModel)]="element.status" [style]="{'width':'100%'}"></p-dropdown>
