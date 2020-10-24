@@ -25,7 +25,6 @@ export interface UsersData {
   value: string;
   viewValue: string;
 }
-
   const foods: Food[] = [
     {value: 'steak-0', viewValue: 'Steak'},
     {value: 'pizza-1', viewValue: 'Pizza'},

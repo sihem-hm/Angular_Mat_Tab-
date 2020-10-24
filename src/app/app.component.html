@@ -22,19 +22,19 @@
 		</ng-container>
 
 
-		<ng-container matColumnDef="name" pEditableColumn >
+		<ng-container matColumnDef="name" pEditableColumn>
 
-			<th mat-header-cell *matHeaderCellDef> Name </th>
+			<th mat-header-cell *matHeaderCellDef> name </th>
 			<th style="width:8rem"></th>
 
-			<td pEditableColumn *matCellDef="let element" style="text-align:center" >
+			<td pEditableColumn *matCellDef="let element" style="text-align:center">
 				<p-cellEditor>
 
-					<ng-template pTemplate="input" let-product let-editing="editing" let-ri="rowIndex">
-						<p-dropdown [options]="statuses" [(ngModel)]="element.product" [style]="{'width':'100%'}"></p-dropdown>
+					<ng-template pTemplate="input">
+						<input pInputText type="text" [(ngModel)]="element.name">
 					</ng-template>
-					<ng-template pTemplate="output" let-product let-editing="editing" let-ri="rowIndex">
-						{{element.product}}
+					<ng-template pTemplate="output">
+						{{element.name}}
 					</ng-template>
 
 
@@ -45,6 +45,7 @@
 
 
 		</ng-container>
+
 
 		<ng-container matColumnDef="job" pEditableColumn>
 
@@ -127,10 +128,13 @@
 			<td pEditableColumn   mat-cell *matCellDef="let element"  style="text-align:center"  > 
 			
 				<p-cellEditor>
-					<ng-template pTemplate="input">
+					<ng-template pTemplate="input"  >
 						<p-dropdown [options]="statuses" [(ngModel)]="element.status" [style]="{'width':'100%'}"></p-dropdown>
 					</ng-template>
-					<ng-template pTemplate="output">
+					<ng-template pTemplate="output" *ngif 	{{element.name}} ! = " " then  
+					{{element.status}} else {{element.name}}
+					> 
+						{{element.name}}
 						{{element.status}}
 					</ng-template>
 				</p-cellEditor>

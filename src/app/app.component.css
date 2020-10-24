@@ -66,3 +66,7 @@ a{
     background-color: aliceblue;
     border-collapse: collapse;
 }
+th { 
+ 
+  text-align: center; 
+}
