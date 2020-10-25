@@ -3,6 +3,10 @@ import { NgModule } from '@angular/core';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatTableModule} from '@angular/material/table';
 import { AppComponent } from './app.component';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import {ScrollingModule} from '@angular/cdk/scrolling';
+import {CdkTableModule} from '@angular/cdk/table';
+import {CdkTreeModule} from '@angular/cdk/tree';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
@@ -39,7 +43,10 @@ import {DropdownModule} from 'primeng/dropdown';
   ],
   imports: [
     BrowserModule,
-    
+    CdkTableModule,
+    DragDropModule,
+    CdkTreeModule,
+    ScrollingModule,
     DropdownModule,
     MatSliderModule,
     MatTableModule,

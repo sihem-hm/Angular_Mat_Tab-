@@ -9,7 +9,7 @@ import {Table , TableService } from 'primeng/table';
 import {FormControl} from '@angular/forms';
 import { Product } from './product';
 import { ProductService } from './productservice';
-
+import {animate, state, style, transition, trigger} from '@angular/animations';
 import { Injectable } from '@angular/core';
 
 
@@ -46,10 +46,15 @@ const ELEMENT_DATA: UsersData[] = [
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   providers: [ TableService, {
-    provide: Table
+    provide: Table}],
     
-
-  }],
+    animations: [
+      trigger('detailExpand', [
+        state('collapsed', style({height: '0px', minHeight: '0', display: 'none'})),
+        state('expanded', style({height: '*'})),
+        transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+      ]),
+    ],
 })
 export class AppComponent {
   displayedColumns: string[] = ['id', 'name', 'job', 'action', 'timeOfDay', 'status']
@@ -58,7 +63,8 @@ export class AppComponent {
   products1: Product[];
   isAvailable : any;
     products2: Product[];
-
+    expandedElement : string;
+    
     statuses: SelectItem[];
 
     clonedProducts: { [s: string]: Product; } = {};
@@ -72,7 +78,7 @@ export class AppComponent {
     private messageService: MessageService) {}
   ngOnInit() {
   
-
+this.expandedElement = "aa";
 
     this.statuses = [{label: 'In Stock', value: 'INSTOCK'},{label: 'Low Stock', value: 'LOWSTOCK'},{label: 'Out of Stock', value: 'OUTOFSTOCK'}]
 }

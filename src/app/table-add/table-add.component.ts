@@ -13,7 +13,7 @@ export interface UsersData {
   styleUrls: ['./table-add.component.css']
 })
 export class TableAddComponent  {
-
+ 
   action:string;
   local_data:any;
  
