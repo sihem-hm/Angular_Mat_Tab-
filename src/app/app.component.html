@@ -7,7 +7,8 @@
 	<table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8">
 		<ng-container matColumnDef="{{column}}" *ngFor="let column of displayedColumns">
 			<th mat-header-cell *matHeaderCellDef> {{column}} </th>
-			<td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+			<td mat-cell *matCellDef="let element"
+			> {{element[column]}} </td>
 		</ng-container>
 
 
@@ -20,7 +21,7 @@
 						<div class="example-element-position"> {{element.id}} </div>
 						<div class="example-element-symbol"> {{element.name}} </div>
 						<div class="example-element-name"> {{element.job}} </div>
-						<div class="example-element-weight"> {{element.action}} </div>
+						
 
 						<div class="example-element-weight"> {{element.timeOfDay}} </div>
 					</div>

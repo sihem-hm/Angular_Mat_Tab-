@@ -57,7 +57,7 @@ const ELEMENT_DATA: UsersData[] = [
     ],
 })
 export class AppComponent {
-  displayedColumns: string[] = ['id', 'name', 'job', 'action', 'timeOfDay', 'status']
+  displayedColumns: string[] = ['id', 'name', 'job', 'timeOfDay', 'status']
   dataSource = ELEMENT_DATA;
   toppings = new FormControl();
   products1: Product[];
