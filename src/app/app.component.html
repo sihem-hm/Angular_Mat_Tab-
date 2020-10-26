@@ -24,21 +24,31 @@
 							<p-cellEditor>
 
 								<ng-template pTemplate="input">
-									<input pInputText type="text" [(ngModel)]="element.id">
+									<input pInputText type="text" [(ngModel)]="element.description">
 								</ng-template>
 								<ng-template pTemplate="output">
-									{{element.id}}
+									{{element.description}}
 								</ng-template>
 			
 			
 							</p-cellEditor>
 						 </td>
-						<td mat-cell   >  	 {{element.name}} </td>
-						<td   mat-cell  >{{element.job}}  </td>
-						
 
-						<td mat-cell   > {{element.timeOfDay}}  </td>
-						<td   mat-cell >  {{element.staus}}</td>
+
+						 <td mat-cell pEditableColumn > 
+							<p-cellEditor>
+
+								<ng-template pTemplate="input">
+									<input pInputText type="text" [(ngModel)]="element.action">
+								</ng-template>
+								<ng-template pTemplate="output">
+									{{element.action}}
+								</ng-template>
+			
+			
+							</p-cellEditor>
+						 </td>
+
 				
 					</div>
 					<!-- <div class="example-element-description">

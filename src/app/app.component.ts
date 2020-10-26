@@ -19,7 +19,8 @@ export interface UsersData {
   job: string;
   id: number;
   timeOfDay : Date;
-  
+  description: string;
+  action: string;
 
 }
 /* export interface Food {
@@ -36,10 +37,10 @@ export interface UsersData {
 
 
 const ELEMENT_DATA: UsersData[] = [
-  {id: 1560608769632, name: 'Artificial Intelligence', job:' teacher',timeOfDay : new Date('2020-04-24')},
-  {id: 1560608796014, name: 'Machine Learning', job:'teacher',timeOfDay : new Date('2020-04-24')},
-  {id: 1560608787815, name: 'Robotic Process Automation' , job: 'teacher',timeOfDay : new Date('2020-04-24')},
-  {id: 1560608805101, name: 'Blockchain' , job: 'teacher',timeOfDay : new Date('2020-04-24')}
+  {id: 1560608769632, name: 'Artificial Intelligence', job:' teacher',timeOfDay : new Date('2020-04-24'),description :"it will be shown in expended row ",action:"delete "},
+  {id: 1560608796014, name: 'Machine Learning', job:'teacher',timeOfDay : new Date('2020-04-24'),description :"it will be shown in expended row",action:"add "},
+  {id: 1560608787815, name: 'Robotic Process Automation' , job: 'teacher',timeOfDay : new Date('2020-04-24'),description :"it will be shown in expended row",action:"delete "},
+  {id: 1560608805101, name: 'Blockchain' , job: 'teacher',timeOfDay : new Date('2020-04-24'),description :"it will be shown in expended row",action:"add "}
 ];
 
 @Component({
@@ -116,7 +117,9 @@ openDialog(action,obj) {
       id:d.getTime(),
       name:row_obj.name,
       job:row_obj.job,
+      action:row_obj.action,
       timeOfDay : row_obj.timeOfDay,
+      description  : row_obj.description,
     });
     this.table.renderRows();
     
