@@ -19,6 +19,7 @@ export interface UsersData {
   job: string;
   id: number;
   timeOfDay : Date;
+  
 
 }
 /* export interface Food {
