@@ -7,34 +7,51 @@
 	<table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8">
 		<ng-container matColumnDef="{{column}}" *ngFor="let column of displayedColumns">
 			<th mat-header-cell *matHeaderCellDef> {{column}} </th>
-			<td mat-cell *matCellDef="let element"
-			> {{element[column]}} </td>
+			<td mat-cell *matCellDef="let element"> {{element[column]}} </td>
 		</ng-container>
 
 
 
-		<ng-container matColumnDef="expandedDetail">
-			<td mat-cell *matCellDef="let element" [attr.colspan]="displayedColumns.length">
-				<div class="example-element-detail"
+		<ng-container matColumnDef="expandedDetail"  >
+			
+			<td     mat-cell *matCellDef="let element" [attr.colspan]="displayedColumns.length">
+				
+				<div 
 					[@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
-					<div class="example-element-diagram">
-						<div class="example-element-position"> {{element.id}} </div>
-						<div class="example-element-symbol"> {{element.name}} </div>
-						<div class="example-element-name"> {{element.job}} </div>
+					<div >
+					
+						<td mat-cell pEditableColumn > 
+							<p-cellEditor>
+
+								<ng-template pTemplate="input">
+									<input pInputText type="text" [(ngModel)]="element.id">
+								</ng-template>
+								<ng-template pTemplate="output">
+									{{element.id}}
+								</ng-template>
+			
+			
+							</p-cellEditor>
+						 </td>
+						<td mat-cell   >  	 {{element.name}} </td>
+						<td   mat-cell  >{{element.job}}  </td>
 						
 
-						<div class="example-element-weight"> {{element.timeOfDay}} </div>
+						<td mat-cell   > {{element.timeOfDay}}  </td>
+						<td   mat-cell >  {{element.staus}}</td>
+				
 					</div>
 					<!-- <div class="example-element-description">
           {{element.status}} -->
-					<span class="example-element-description-attribution"> -- Wikipedia </span>
+				
 				</div>
 				<!--  </div> -->
+		
 			</td>
 		</ng-container>
 
 		<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-		<tr mat-row *matRowDef="let element; columns: displayedColumns ;" class="example-element-row"
+		<tr mat-row *matRowDef="let element; columns: displayedColumns ;" 
 			[class.example-expanded-row]="expandedElement === element" (click)="expandedElement = element">
 		</tr>
 		<tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
