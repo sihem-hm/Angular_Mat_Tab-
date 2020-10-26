@@ -48,7 +48,33 @@
 			
 							</p-cellEditor>
 						 </td>
+ <td mat-cell pEditableColumn>
 
+
+
+	<p-cellEditor>
+		<ng-template pTemplate="input">
+			<p-dropdown [options]="statuses" [(ngModel)]="element.status" [style]="{'width':'100%'}"
+			value ="element.status.INSTOCK"
+			
+			>
+			</p-dropdown>
+		</ng-template>
+		<ng-template pTemplate="output" >
+			<mat-select [(ngModel)]="element.status">
+				<mat-option *ngFor="let item of element.status" [value]="item">{{item.INSTOCK}}</mat-option>
+			</mat-select>
+			{{element.status}}
+		</ng-template>
+	</p-cellEditor>
+
+
+
+
+
+
+
+ </td>
 				
 					</div>
 					<!-- <div class="example-element-description">
