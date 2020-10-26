@@ -12,7 +12,7 @@ import { ProductService } from './productservice';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import { Injectable } from '@angular/core';
 
-
+import { FormGroup,FormBuilder, Validators, AbstractControl, ValidatorFn, FormArray } from '@angular/forms';
 
 export interface UsersData {
   name: string;
@@ -60,6 +60,7 @@ const ELEMENT_DATA: UsersData[] = [
 export class AppComponent {
   displayedColumns: string[] = ['id', 'name', 'job', 'timeOfDay', 'status']
   dataSource = ELEMENT_DATA;
+  customerForm: FormGroup;
   toppings = new FormControl();
   products1: Product[];
   isAvailable : any;
@@ -85,7 +86,10 @@ this.expandedElement = "aa";
 }
 
 
-
+save(): void {
+  console.log(this.customerForm);
+  console.log('Saved: ' + JSON.stringify(this.customerForm.value));
+}
 
 
 openDialog(action,obj) {

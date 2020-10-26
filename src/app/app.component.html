@@ -24,7 +24,7 @@
 							<p-cellEditor>
 
 								<ng-template pTemplate="input">
-									<input pInputText type="text" ngvalue ="element.id">
+									<input pInputText type="text" [(ngModel)]="element.id">
 								</ng-template>
 								<ng-template pTemplate="output">
 									{{element.id}}
