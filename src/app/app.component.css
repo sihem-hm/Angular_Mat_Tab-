@@ -94,6 +94,12 @@ tr.example-element-row:not(.example-expanded-row):active {
   overflow: hidden;
   display: flex;
 }
+.aa
+{
+
+  padding-left: -15px;
+  
+}
 
 .example-element-diagram {
   min-width: 80px;
