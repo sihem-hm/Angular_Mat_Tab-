@@ -60,8 +60,7 @@ const ELEMENT_DATA: UsersData[] = [
 })
 export class AppComponent {
   icon : any;
-  displayedColumns: string[] = ['id', 'name', 'job', 'timeOfDay','statuses']
-  displayedColumns1: string[] = ['icon']
+  displayedColumns: string[] = ['icon','id', 'name', 'job', 'timeOfDay','statuses']
 
   dataSource = ELEMENT_DATA;
   customerForm: FormGroup;
