@@ -65,23 +65,38 @@
 	
 				<td pEditableColumn mat-cell *matCellDef="let element" style="text-align:center">
 	
-					<p-cellEditor>
-						<ng-template pTemplate="input">
-							<p-dropdown [options]="statuses" [(ngModel)]="element.statuses" [style]="{'width':'100%'}"
-							value ="element.statuses.INSTOCK"
-							
-							>
-							</p-dropdown>
-						</ng-template>
-						<ng-template pTemplate="output" >
-							<mat-select [(ngModel)]="element.statuses">
-								<mat-option *ngFor="let item of element.statuses" [value]="element.statuses">{{item.INSTOCK}}</mat-option>
-							</mat-select>
-							{{element.statuses}}
-						</ng-template>
-					</p-cellEditor>
+					
+						<!-- <p-cellEditor>
+							<ng-template pTemplate="input">
+								<p-dropdown [options]="statuses" [(ngModel)]="element.statuses" [style]="{'width':'100%'}"
+								value="tgtttgh"
+								></p-dropdown>
+							</ng-template>
+							<ng-template pTemplate="output"  value ="aaaaa"  >
+								{{element.statuses }}
+							</ng-template>
+						</p-cellEditor>
+	 -->
+	 <!-- <p-cellEditor> -->
+		
+	 <select matNativeControl [formControl]="nativeSelectFormControl" >
+	<option value=""></option> 
+			<option value="valid" selected>Valid option</option>
+		<option value="invalid">Invalid option</option>
 	
-	
+	  </select> 
+	 <!-- </p-cellEditor> -->
+
+
+
+
+
+
+
+
+
+
+
 				</td>
 			</ng-container>
 

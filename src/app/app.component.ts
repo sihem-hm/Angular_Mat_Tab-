@@ -88,7 +88,10 @@ this.expandedElement = "aa";
 
     this.statuses = [{label: 'In Stock', value: 'INSTOCK'},{label: 'Low Stock', value: 'LOWSTOCK'},{label: 'Out of Stock', value: 'OUTOFSTOCK'}]
 }
-
+nativeSelectFormControl = new FormControl('valid', [
+  Validators.required,
+  Validators.pattern('valid'),
+]);
 
 save(): void {
   console.log(this.customerForm);
