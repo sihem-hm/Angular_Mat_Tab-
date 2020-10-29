@@ -77,15 +77,24 @@
 							</ng-template>
 						</p-cellEditor>
 	 -->
-	 <!-- <p-cellEditor> -->
-		
-	 <select matNativeControl [formControl]="nativeSelectFormControl" >
-	<option value=""></option> 
-			<option value="valid" selected>Valid option</option>
-		<option value="invalid">Invalid option</option>
-	
-	  </select> 
-	 <!-- </p-cellEditor> -->
+	 <p-cellEditor> 
+		<ng-template pTemplate="input">
+		<select matNativeControl [formControl]="nativeSelectFormControl" >
+			<option value=""></option> 
+					<option value="valid" selected>Valid option</option>
+				<option value="invalid">Invalid option</option>
+			
+			  </select>  </ng-template>
+
+			  <ng-template pTemplate="output"  value ="aaaaa"  >
+				<select matNativeControl [formControl]="nativeSelectFormControl" >
+					<option value=""></option> 
+							<option value="valid" selected>Valid option</option>
+						<option value="invalid">Invalid option</option>
+					
+					  </select> 
+			</ng-template>
+	 </p-cellEditor> 
 
 
 
