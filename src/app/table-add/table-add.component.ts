@@ -11,12 +11,13 @@ export interface UsersData {
   selector: 'app-table-add',
   templateUrl: './table-add.component.html',
   styleUrls: ['./table-add.component.css']
+
 })
 export class TableAddComponent  {
- 
+
   action:string;
   local_data:any;
- 
+
   constructor(
     public dialogRef: MatDialogRef<TableAddComponent>,
     //@Optional() is used to prevent error if no data is passed
